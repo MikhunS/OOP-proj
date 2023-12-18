@@ -6,7 +6,8 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class TestHelp{
+public class TestHelp{
+    @Test
     public void helpTest()
     {
         String expected = "Для вычисления неопределенного интеграла введите -u";
