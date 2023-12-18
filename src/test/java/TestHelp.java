@@ -4,12 +4,9 @@ import org.junit.Test;
 import java.util.Scanner;
 
 class HelpTest{
-    public void testHelp()
+    public void testHelp(String actual)
     {
-        Scanner scan = new Scanner (System.in);
         String expected = "--help";
-        String actual = scan.next();
         Assert.assertEquals(expected,actual);
-
     };
 }
