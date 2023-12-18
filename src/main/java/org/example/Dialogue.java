@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Objects;
 
-class Dialogue {
+public class Dialogue {
     public void start() {
         System.out.println("Я приложение вычисляющее интегралы введенной функции, для просмотра функционала введите --help");
     }
@@ -15,14 +15,18 @@ class Dialogue {
 
     }
 
-    public void help(ArrayList<String> mas) {
+    public String help(ArrayList<String> mas) {
         for (String arg : mas) {
             if (Objects.equals(arg, "--help")) {
                 System.out.println("Для вычисления неопределенного интеграла введите -u");
                 System.out.println("Для вычисления определенного интеграла введите -d ");
-            } else {
+                return "Для вычисления неопределенного интеграла введите -u";
+            }
+            else {
                 System.out.println("Вы не ввели --help");
+                return "";
             }
         }
+        return null;
     }
 }
