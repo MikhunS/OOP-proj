@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-class Integration {
+public class Integration {
 
     public static void calc() {
         Function function;
