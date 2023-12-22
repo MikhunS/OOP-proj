@@ -17,19 +17,19 @@ public class IntegrationTest {
         for (int k = 0;k < 4;k++) {
             switch (Form.fields) {
                 case 0:
-                    form.setFunc_num(Integer.parseInt(input[0]));
+                    form.setFunc_num(Integer.parseInt(input[k]));
                     form.setFields();
                     break;
                 case 1:
-                    form.setDowm(Double.parseDouble(input[1]));
+                    form.setDowm(Double.parseDouble(input[k]));
                     form.setFields();
                     break;
                 case 2:
-                    form.setUpp(Double.parseDouble(input[2]));
+                    form.setUpp(Double.parseDouble(input[k]));
                     form.setFields();
                     break;
                 case 3:
-                    form.setAccur(Integer.parseInt(input[3]));
+                    form.setAccur(Integer.parseInt(input[k]));
                     form.setFields();
                     break;
             }
