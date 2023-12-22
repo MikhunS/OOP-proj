@@ -24,14 +24,6 @@ public class Dialogue extends TGBot {
     public void enter(String chatId,int opt) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
-        /*if(opt==0){
-            sendMessage.setText("выберите функцию : 1) cos , 2) sin , 3) tg");
-            try {
-                this.execute(sendMessage);
-            } catch (TelegramApiException e) {
-                throw new RuntimeException(e);
-            }
-        }*/
         if(opt==0) {
             sendMessage.setText("Введите нижний предел интегрирования");
             try {
