@@ -30,7 +30,7 @@ public class Function {
             s = F.g(a) * F.g(b);
         }
         if (y == 3) {
-            s = F.f(a) * F.f(b);
+            s = F.h(a) * F.h(b);
         }
 
         h = (b - a) / n;
