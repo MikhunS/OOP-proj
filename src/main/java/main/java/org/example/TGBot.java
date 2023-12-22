@@ -69,6 +69,7 @@ public class TGBot extends TelegramLongPollingBot {
         }
         if (Form.fields == 4) {
             i.calc(chatId,Form.func_num, Form.down, Form.up, Form.accuracy);
+            Form.fields=0;
         }
     }
 }
