@@ -44,7 +44,7 @@ public class Function {
                 s = s + z * F.g(a + i * h);
             }
             if (y == 3) {
-                s = s + z * F.f(a + i * h);
+                s = s + z * F.h(a + i * h);
             }
 
             z = 6 - z;
