@@ -17,11 +17,8 @@ public class Function {
         }
     }
 
-    // Simpson's method for integral calculus
-    // a = lower bound
-    // b = upper bound of integration
-    // n = number of passes (higher = less margin of error, but takes longer)
-    public double IntSimpson(double a, double b, int n, int y) {
+ 
+    public double intSimpson(double a, double b, int n, int y) {
         int i, z;
         double h, s = 0;
 
