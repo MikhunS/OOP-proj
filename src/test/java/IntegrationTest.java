@@ -1,19 +1,42 @@
-import main.java.org.example.Dialogue;
+package test.java;
+
+import main.java.org.example.Form;
 import main.java.org.example.Integration;
-import main.java.org.example.TGBot;
 import org.junit.Assert;
 import org.junit.Test;
-import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.util.ArrayList;
-
-public class IntegrationTest  {
+public class IntegrationTest {
     @Test
-    public void testIntegration()
+    public void testIntegrate()
     {
+        String[] input = {"1","10","20","50"};
+        String result;
+        Form form = new Form();
         String expected = "1.4599198195963226";
         Integration i = new Integration();
-        Assert.assertEquals(expected,i.calc_shell(1,10,20,50));
-
-    };
+        for (int k = 0;k < 4;k++) {
+            switch (Form.fields) {
+                case 0:
+                    form.setFunc_num(Integer.parseInt(input[0]));
+                    form.setFields();
+                    break;
+                case 1:
+                    form.setDowm(Double.parseDouble(input[1]));
+                    form.setFields();
+                    break;
+                case 2:
+                    form.setUpp(Double.parseDouble(input[2]));
+                    form.setFields();
+                    break;
+                case 3:
+                    form.setAccur(Integer.parseInt(input[3]));
+                    form.setFields();
+                    break;
+            }
+            if (Form.fields == 4) {
+                result = i.calc_shell(form.func_num, form.down, form.up, form.accur);
+                Assert.assertEquals(expected,result);
+            }
+        }
+    }
 }
