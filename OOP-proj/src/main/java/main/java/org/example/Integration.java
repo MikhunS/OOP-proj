@@ -9,28 +9,6 @@ public class Integration extends TGBot {
     public Integration() {
         super();
     }
-
-    public void calc_prep(String chatId) {
-        SendMessage sendMessage = new SendMessage();
-        sendMessage.setChatId(chatId);
-        Function function;
-        Dialogue di;
-        di = new Dialogue();
-        function = new Function();
-        sendMessage.setText("Введите через пробел следующие 4 параметра :");
-        try {
-            this.execute(sendMessage);
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);
-        }
-        sendMessage.setText("выберите функцию : 1) cos , 2) sin , 3) tg");
-        try {
-            this.execute(sendMessage);
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);
-        }
-        //di.enter(chatId);
-    }
     public String calc(String chatId,int d,double a,double b,int n){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
