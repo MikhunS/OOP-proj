@@ -16,7 +16,7 @@ public class IntegrationTestPrep {
                     form.setFields();
                     break;
                 case 1:
-                    form.setDowm(Double.parseDouble(input[k]));
+                    form.setDown(Double.parseDouble(input[k]));
                     form.setFields();
                     break;
                 case 2:
@@ -24,12 +24,12 @@ public class IntegrationTestPrep {
                     form.setFields();
                     break;
                 case 3:
-                    form.setAccur(Integer.parseInt(input[k]));
+                    form.setAccuracy(Integer.parseInt(input[k]));
                     form.setFields();
                     break;
             }
             if (Form.fields == 4) {
-                result = i.calc_shell(form.func_num, form.down, form.up, form.accur);
+                result = i.calc_shell(form.func_num, form.down, form.up, form.accuracy);
             }
         }
         return result;
