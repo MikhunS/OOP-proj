@@ -8,11 +8,6 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
-import static jdk.internal.agent.Agent.getText;
-
 
 public class TGBot extends TelegramLongPollingBot {
 
@@ -75,13 +70,4 @@ public class TGBot extends TelegramLongPollingBot {
             i.calc(chatId,form.func_num, form.down, form.up, form.accur);
         }
     }
-
-    /*private void send(TelegramBotsApi msg){
-        try {
-            this.execute(msg);
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
 }
