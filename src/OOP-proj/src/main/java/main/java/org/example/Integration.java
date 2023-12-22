@@ -36,7 +36,7 @@ public class Integration extends TGBot {
         sendMessage.setChatId(chatId);
         Function function;
         function = new Function();
-        double result = function.IntSimpson(a, b, n, d);
+        double result = function.intSimpson(a, b, n, d);
 
         sendMessage.setText("Integral is: " + result);
         try {
@@ -49,7 +49,7 @@ public class Integration extends TGBot {
     public String calc_shell(int d,double a,double b,int n){
         Function function;
         function = new Function();
-        double result = function.IntSimpson(a, b, n, d);
+        double result = function.intSimpson(a, b, n, d);
         return String.valueOf(result);
     }
 }
