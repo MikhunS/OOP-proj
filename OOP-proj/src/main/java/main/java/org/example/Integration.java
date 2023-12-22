@@ -9,7 +9,7 @@ public class Integration extends TGBot {
     public Integration() {
         super();
     }
-    public String calc(String chatId,int d,double a,double b,int n){
+    public void calc(String chatId,int d,double a,double b,int n){
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         Function function;
@@ -22,7 +22,6 @@ public class Integration extends TGBot {
         } catch (TelegramApiException e) {
             throw new RuntimeException(e);
         }
-        return String.valueOf(result);
     }
     public String calc_shell(int d,double a,double b,int n){
         Function function;
