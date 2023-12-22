@@ -7,9 +7,9 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.ArrayList;
 
-public class HelpTest  {
+public class IntegrationTest  {
     @Test
-    public void testHelp()
+    public void testIntegration()
     {
         String expected = "1.4599198195963226";
         Integration i = new Integration();
