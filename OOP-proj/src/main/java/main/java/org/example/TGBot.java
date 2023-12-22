@@ -51,7 +51,7 @@ public class TGBot extends TelegramLongPollingBot {
                         form.setFields();
                         break;
                     case 1:
-                        form.setDowm(Double.parseDouble(update.getMessage().getText()));
+                        form.setDown(Double.parseDouble(update.getMessage().getText()));
                         d.enter(chatId, Form.fields);
                         form.setFields();
                         break;
@@ -61,13 +61,13 @@ public class TGBot extends TelegramLongPollingBot {
                         form.setFields();
                         break;
                     case 3:
-                        form.setAccur(Integer.parseInt(update.getMessage().getText()));
+                        form.setAccuracy(Integer.parseInt(update.getMessage().getText()));
                         form.setFields();
                         break;
                 }
         }
         if (Form.fields == 4) {
-            i.calc(chatId,form.func_num, form.down, form.up, form.accur);
+            i.calc(chatId,Form.func_num, Form.down, Form.up, Form.accuracy);
         }
     }
 }
