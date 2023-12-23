@@ -1,6 +1,4 @@
-
-import main.java.org.example.Form;
-import main.java.org.example.Integration;
+package main.java.org.example;
 
 public class IntegrationTestPrep {
     public String resultTest() {
