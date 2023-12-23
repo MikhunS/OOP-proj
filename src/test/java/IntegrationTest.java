@@ -1,7 +1,6 @@
 package test.java;
 
-import main.java.org.example.Form;
-import main.java.org.example.Integration;
+import main.java.org.example.IntegrationTestPrep;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,8 +9,9 @@ public class IntegrationTest {
     public void testIntegrate()
     {
         String expected = "1.4599198195963226";
+        String[] actual ={"1","10","20","50"};
         IntegrationTestPrep res = new IntegrationTestPrep();
-        String result = res.resultTest();
+        String result = res.getResult(actual);
         Assert.assertEquals(expected,result);
     }
 }
