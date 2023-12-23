@@ -1,8 +1,8 @@
 package main.java.org.example;
 
+
 public class IntegrationTestPrep {
-    public String resultTest() {
-        String[] input = {"1", "10", "20", "50"};
+    public String getResult(String[] input) {
         String result="";
         Form form = new Form();
         Integration i = new Integration();
