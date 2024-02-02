@@ -32,6 +32,7 @@ public class TGBot extends TelegramLongPollingBot {
         sendMessage.setChatId(chatId);
         Integration i = new Integration();
         Dialogue d = new Dialogue();
+        IntegrationTestPrep ing = new IntegrationTestPrep();
         String arg = update.getMessage().getText();
         switch (arg) {
             case "--help":
@@ -44,32 +45,21 @@ public class TGBot extends TelegramLongPollingBot {
                 } catch (TelegramApiException e) {
                     throw new RuntimeException(e);
                 }
+                break;
             default:
-                switch (Form.fields) {
-                    case 0:
-                        form.setFunc_num(Integer.parseInt(update.getMessage().getText()));
-                        d.enter(chatId, Form.fields);
-                        form.setFields();
-                        break;
-                    case 1:
-                        form.setDown(Double.parseDouble(update.getMessage().getText()));
-                        d.enter(chatId, Form.fields);
-                        form.setFields();
-                        break;
-                    case 2:
-                        form.setUpp(Double.parseDouble(update.getMessage().getText()));
-                        d.enter(chatId, Form.fields);
-                        form.setFields();
-                        break;
-                    case 3:
-                        form.setAccuracy(Integer.parseInt(update.getMessage().getText()));
-                        form.setFields();
-                        break;
+                d.enter(chatId, Form.fields);
+                String result = ing.getResult(arg,form);
+                if (Form.fields == 4) {
+                    sendMessage.setChatId(chatId);
+                    sendMessage.setText("Integral is: " + result);
+                    try {
+                        this.execute(sendMessage);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
+                    Form.fields=0;
                 }
-        }
-        if (Form.fields == 4) {
-            i.calc(chatId,Form.func_num, Form.down, Form.up, Form.accuracy);
-            Form.fields=0;
         }
     }
 }
+
