@@ -8,6 +8,8 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.awt.*;
+
 
 public class TGBot extends TelegramLongPollingBot {
 
@@ -46,6 +48,12 @@ public class TGBot extends TelegramLongPollingBot {
                     throw new RuntimeException(e);
                 }
                 break;
+            case "-show":
+                EventQueue.invokeLater(() -> {
+
+                    var ex = new Graph((int) Form.up,(int) Form.down,Form.func_num);
+                    ex.setVisible(true);
+                });
             default:
                 d.enter(chatId, Form.fields);
                 String result = ing.getResult(arg,form);
@@ -57,9 +65,14 @@ public class TGBot extends TelegramLongPollingBot {
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
                     }
+                    sendMessage.setText("Для просмотра графика соответсвующего интеграла с переменным верхним пределом введите -show");
+                    try {
+                        this.execute(sendMessage);
+                    } catch (TelegramApiException e) {
+                        throw new RuntimeException(e);
+                    }
                     Form.fields=0;
                 }
         }
     }
 }
-
