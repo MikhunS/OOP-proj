@@ -1,7 +1,6 @@
-package main.java.org.example;
+ppackage main.java.org.example;
 
 import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.block.BlockBorder;
 import org.jfree.chart.plot.PlotOrientation;
@@ -12,34 +11,19 @@ import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
+
+import static main.java.org.example.Form.*;
 
 public class Graph extends JFrame {
 
-    public Graph(int up,int down,int func_n) {
+    private  XYDataset dataset = createDataset((int)up,(int)down,func_num);
+    public JFreeChart chart = createChart(dataset);
 
-        initUI(up,down,func_n);
-    }
-
-    private void initUI(int up, int down, int func_n) {
-
-        XYDataset dataset = createDataset(up,down,func_n);
-        JFreeChart chart = createChart(dataset);
-
-        ChartPanel chartPanel = new ChartPanel(chart);
-        chartPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
-        chartPanel.setBackground(Color.white);
-        add(chartPanel);
-
-        pack();
-        setTitle("Line chart");
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public Graph(int up, int down, int funcNum) {
     }
 
     private XYDataset createDataset(int up, int down, int func_n) {
