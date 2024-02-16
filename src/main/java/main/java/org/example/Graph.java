@@ -1,4 +1,4 @@
-ppackage main.java.org.example;
+package main.java.org.example;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
